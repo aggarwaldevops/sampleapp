@@ -1,20 +1,20 @@
-name: FTP Test
 
+name: Publish Website to CPanel
 on:
   push:
-    branches: [master]
-
+    branches:
+      - master
 jobs:
-  deploy:
-    name: 🚀 Deploy website every commit
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v4
-
-      - name: 📂 Sync files
-        uses: ./
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+    - name: FTP-Deploy-Action      
+      with:
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USER }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
