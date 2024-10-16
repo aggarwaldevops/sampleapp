@@ -17,5 +17,4 @@ jobs:
       with:
         ftp-server: ${{ secrets.FTP_SERVER }}
         ftp-username: ${{ secrets.FTP_USER }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }} 
-        protocol: ftps
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
