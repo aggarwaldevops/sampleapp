@@ -17,4 +17,4 @@ jobs:
       with:
         server: ftp.betatestrepo.netvision
         username: gitdemo2@betatestrepo.netvision
-        password: ${{ secrets.FTP_PASSWORD }}
+        password: ${{ secrets.FTP_PASSWORD }} 
